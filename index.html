@@ -216,19 +216,21 @@
     </footer>
 
     <script>
+        // Mapping corrected: ASIN, Image, and Titles are now synchronized.
         const products = [
             {
                 id: 1,
                 asin: "B0DZ2JP887",
-                name: "SLE-TECH 65W 45W Laptop Charger for Dell Inspiron Latitude Vostro",
+                name: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9,T14 T15 E14 E15 L13,Yoga 7i 9i C740 C930 C940,Chromebook 100e 300e 500e c330 s330,Type C AC Adapter Power Cord",
                 price: "$20.99",
                 image: "https://m.media-amazon.com/images/I/71hySCAG+7L._AC_SX466_.jpg",
-                desc: "Official replacement AC adapter for Dell laptops. Features the standard 4.5mm small blue tip. Built with intelligent chipset to identify device power needs.",
+                desc: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9,T14 T15 E14 E15 L13,Yoga 7i 9i C740 C930 C940,Chromebook 100e 300e 500e c330 s330,Type C AC Adapter Power Cord",
                 specs: [
+                    "Output: 20V 3.25A / 15V 3A / 9V 2A / 5V 2A (65W Max)",
                     "Input: 100-240V 50-60Hz",
-                    "Output: 19.5V 3.34A / 2.31A (65W/45W)",
-                    "Connector: 4.5mm * 3.0mm (Blue Tip)",
-                    "Safety: Over-charge, Over-current, Surge Protection"
+                    "Connector: USB Type-C (Power Delivery)",
+                    "Compatibility: Lenovo ThinkPad, Yoga, Chromebook and more",
+                    "Safety: Built-in Protection against Over-temp/Current"
                 ]
             },
             {
@@ -298,7 +300,7 @@
                         <img src="${p.image}" alt="${p.name}" class="max-w-full max-h-full object-contain" 
                              onerror="this.src='https://via.placeholder.com/400x400/ffffff/64748b?text=Product+Image'">
                     </div>
-                    <div class="flex-grow px-2">
+                    <div class="flex-grow px-2 text-center md:text-left">
                         <h3 class="text-sm font-bold text-gray-800 mb-2 line-clamp-2 leading-relaxed h-10">${p.name}</h3>
                         <p class="text-blue-600 font-extrabold text-lg mb-3">${p.price}</p>
                         <div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-4">
@@ -328,15 +330,15 @@
                              onerror="this.src='https://via.placeholder.com/600x600/ffffff/64748b?text=Main+Product+Image'">
                     </div>
                     <div class="flex flex-col justify-center">
-                        <div class="mb-4">
+                        <div class="mb-4 text-center md:text-left">
                             <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-black uppercase rounded tracking-widest">Official Store</span>
                         </div>
-                        <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-gray-900 leading-tight">${product.name}</h2>
-                        <div class="text-4xl font-black text-blue-600 mb-6">${product.price}</div>
+                        <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-gray-900 leading-tight text-center md:text-left">${product.name}</h2>
+                        <div class="text-4xl font-black text-blue-600 mb-6 text-center md:text-left">${product.price}</div>
                         
                         <div class="space-y-6 mb-8">
                             <div>
-                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Specifications</h4>
+                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Specifications</h4>
                                 <ul class="grid grid-cols-1 gap-2">
                                     ${product.specs.map(s => `
                                         <li class="flex items-center text-gray-700 text-sm">
@@ -346,8 +348,8 @@
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Description</h4>
-                                <p class="text-gray-600 text-sm leading-relaxed">${product.desc}</p>
+                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Description</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed text-center md:text-left">${product.desc}</p>
                             </div>
                         </div>
                         

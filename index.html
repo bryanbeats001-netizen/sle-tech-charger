@@ -53,6 +53,23 @@
             justify-content: center;
             padding: 1rem;
         }
+
+        .inquiry-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inquiry-modal.active {
+            display: flex;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -68,7 +85,7 @@
                     <button onclick="navigateTo('home')" class="nav-link font-medium hover:text-blue-600 transition">Home</button>
                     <button onclick="navigateTo('products')" class="nav-link font-medium hover:text-blue-600 transition">Products</button>
                     <button onclick="navigateTo('about')" class="nav-link font-medium hover:text-blue-600 transition">About Us</button>
-                    <button onclick="navigateTo('support')" class="nav-link font-medium hover:text-blue-600 transition">Support</button>
+                    <button onclick="navigateTo('support')" class="nav-link font-medium hover:text-blue-600 transition">Contact Us</button>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
@@ -83,17 +100,17 @@
         <section class="gradient-bg text-white py-28 px-4 text-center">
             <div class="max-w-4xl mx-auto">
                 <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-900/30 rounded-full">
-                    Premium Power Solutions
+                    Professional Power Solutions
                 </div>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">SLE-TECH: Reliable Power for Every Device</h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Engineered for safety, speed, and long-lasting durability. Your trusted partner for laptop power adapters.</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">SLE-TECH: Reliable Power for Global Enterprises</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Precision-engineered for safety and high performance. Your premier partner for universal power delivery and charging infrastructure.</p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <button onclick="navigateTo('products')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition transform hover:scale-105 shadow-lg shadow-blue-500/20">
-                        View Products
+                        View Catalog
                     </button>
-                    <a href="https://www.amazon.com/stores/SLE-TECH/page/618AE5EC-B06D-4F09-AD19-861C35E11E19?lp_asin=B0DZ2JP887&ref_=ast_bln" target="_blank" class="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition shadow-md">
-                        Amazon Store
-                    </a>
+                    <button onclick="navigateTo('support')" class="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition shadow-md">
+                        Request a Quote
+                    </button>
                 </div>
             </div>
         </section>
@@ -113,7 +130,8 @@
     <main id="products-page" class="page-section pt-24 pb-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-12 text-center">
-                <h2 class="text-3xl font-bold text-gray-900">Featured Amazon Products</h2>
+                <h2 class="text-3xl font-bold text-gray-900">Our Premium Selection</h2>
+                <p class="text-gray-500 mt-2">Discover high-efficiency adapters tailored for your professional equipment</p>
                 <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded-full"></div>
             </div>
             
@@ -133,10 +151,13 @@
     <!-- About Us Page -->
     <main id="about-page" class="page-section pt-24 pb-12">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Professional Excellence</h2>
+            <h2 class="text-3xl font-bold mb-8">Engineering Excellence</h2>
             <div class="bg-white p-10 rounded-3xl shadow-sm text-left border border-gray-100">
                 <p class="text-gray-700 mb-6 leading-relaxed text-lg">
-                    SLE-TECH specializes in the research, development, and manufacturing of premium AC adapters. Based on the philosophy of "Safety First," our products undergo rigorous QC testing to ensure full compatibility with major laptop brands.
+                    SLE-TECH is at the forefront of power conversion technology. We specialize in developing high-density, high-efficiency AC/DC adapters that meet the stringent requirements of modern IT environments.
+                </p>
+                <p class="text-gray-700 mb-6 leading-relaxed text-lg">
+                    Our manufacturing processes are ISO certified, ensuring that every unit shipped maintains the highest level of performance and reliability.
                 </p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
                     <div class="p-6 bg-gray-50 rounded-2xl text-center">
@@ -144,12 +165,12 @@
                         <div class="text-xs text-gray-500 font-bold tracking-widest mt-1">QC TESTED</div>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-2xl text-center">
-                        <div class="text-3xl font-bold text-blue-600">24/7</div>
-                        <div class="text-xs text-gray-500 font-bold tracking-widest mt-1">CUSTOMER CARE</div>
+                        <div class="text-3xl font-bold text-blue-600">Global</div>
+                        <div class="text-xs text-gray-500 font-bold tracking-widest mt-1">DISTRIBUTION</div>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-2xl text-center">
-                        <div class="text-3xl font-bold text-blue-600">Global</div>
-                        <div class="text-xs text-gray-500 font-bold tracking-widest mt-1">CERTIFICATION</div>
+                        <div class="text-3xl font-bold text-blue-600">Tier 1</div>
+                        <div class="text-xs text-gray-500 font-bold tracking-widest mt-1">COMPONENTS</div>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-2xl text-center">
                         <div class="text-3xl font-bold text-blue-600">2-Year</div>
@@ -160,24 +181,47 @@
         </div>
     </main>
 
-    <!-- Support Page -->
+    <!-- Contact Page -->
     <main id="support-page" class="page-section pt-24 pb-12">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Technical Support</h2>
+            <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
             <div class="bg-white p-10 rounded-3xl shadow-sm text-left border border-gray-100">
-                <p class="text-gray-700 mb-6 leading-relaxed text-lg text-center">
-                    Have questions about compatibility or experiencing technical issues? Our professional support team is ready to help.
-                </p>
-                <div class="grid md:grid-cols-2 gap-8 mt-4">
-                    <div class="p-6 border border-gray-100 rounded-2xl hover:bg-blue-50 transition">
-                        <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-envelope text-blue-600"></i> Email Support</h4>
-                        <p class="text-gray-500 text-sm">Send us an email anytime and we will get back to you within 24 hours.</p>
-                        <p class="mt-4 font-bold text-blue-600">support@sle-tech.com</p>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="font-bold text-xl mb-4">Direct Inquiry</h4>
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our sales team will contact you shortly.');">
+                            <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                            <input type="email" placeholder="Business Email" class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+                            <textarea placeholder="Tell us about your requirements..." class="w-full p-3 border rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none" required></textarea>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition">Send Inquiry</button>
+                        </form>
                     </div>
-                    <div class="p-6 border border-gray-100 rounded-2xl hover:bg-orange-50 transition">
-                        <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fab fa-amazon text-orange-500"></i> Amazon Support</h4>
-                        <p class="text-gray-500 text-sm">Contact us directly via your Amazon Orders page for instant assistance.</p>
-                        <a href="https://www.amazon.com/stores/SLE-TECH/page/618AE5EC-B06D-4F09-AD19-861C35E11E19" target="_blank" class="mt-4 inline-block font-bold text-orange-600 underline">Visit Store Hub</a>
+                    <div>
+                        <h4 class="font-bold text-xl mb-4">Contact Information</h4>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Email Us</p>
+                                    <p class="text-gray-500 text-sm">support@sle-tech.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">Headquarters</p>
+                                    <p class="text-gray-500 text-sm">Power Innovation Center, Shenzhen, China</p>
+                                </div>
+                            </div>
+                            <div class="p-6 bg-blue-600 rounded-2xl text-white">
+                                <p class="font-bold mb-2">Bulk Orders?</p>
+                                <p class="text-blue-100 text-sm">We provide tailored OEM/ODM solutions for corporate clients worldwide.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -189,104 +233,107 @@
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 border-b border-gray-800 pb-12 text-center md:text-left">
             <div>
                 <h4 class="text-2xl font-bold mb-4 tracking-tighter text-blue-400">SLE-TECH</h4>
-                <p class="text-gray-400 text-sm">Professional power solutions for the modern world. Safety you can trust, quality you can feel.</p>
+                <p class="text-gray-400 text-sm">Professional power solutions for a connected world. Quality, safety, and performance you can trust.</p>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Shop</h5>
+                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Navigation</h5>
                 <ul class="text-gray-400 text-sm space-y-3">
-                    <li><button onclick="navigateTo('products')" class="hover:text-blue-400 transition text-left">Laptop Adapters</button></li>
-                    <li><button onclick="navigateTo('products')" class="hover:text-blue-400 transition text-left">USB-C PD Chargers</button></li>
+                    <li><button onclick="navigateTo('products')" class="hover:text-blue-400 transition text-left">Products</button></li>
+                    <li><button onclick="navigateTo('about')" class="hover:text-blue-400 transition text-left">Our Company</button></li>
+                    <li><button onclick="navigateTo('support')" class="hover:text-blue-400 transition text-left">Bulk Inquiry</button></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Support</h5>
+                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Global Support</h5>
                 <p class="text-gray-400 text-sm mb-2">support@sle-tech.com</p>
-                <p class="text-gray-400 text-sm italic">Direct Amazon Customer Service Available</p>
+                <p class="text-gray-400 text-sm">Dedicated B2B Support Channel</p>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Brand Store</h5>
-                <a href="https://www.amazon.com/stores/SLE-TECH/page/618AE5EC-B06D-4F09-AD19-861C35E11E19" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg transition text-sm font-bold">
-                    <i class="fab fa-amazon"></i> Shop on Amazon
-                </a>
+                <h5 class="font-bold mb-6 text-gray-100 uppercase text-xs tracking-widest">Connect</h5>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fas fa-globe"></i></a>
+                </div>
             </div>
         </div>
         <div class="text-center pt-8 text-gray-600 text-[10px] tracking-[0.2em] uppercase font-bold">
-            &copy; 2024 SLE-TECH Official Website. All Rights Reserved.
+            &copy; 2024 SLE-TECH Official Website. Empowering Enterprise Power.
         </div>
     </footer>
 
     <script>
-        // Mapping corrected: ASIN, Image, and Titles are now synchronized.
+        // Data updated to remove Amazon links and correctly map ASIN B0DZ2JP887 to Lenovo specs
         const products = [
             {
                 id: 1,
-                asin: "B0DZ2JP887",
-                name: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9,T14 T15 E14 E15 L13,Yoga 7i 9i C740 C930 C940,Chromebook 100e 300e 500e c330 s330,Type C AC Adapter Power Cord",
+                ref_id: "B0DZ2JP887",
+                name: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9, T14 T15 E14 E15 L13, Yoga 7i 9i C740 C930 C940, Chromebook 100e 300e 500e c330 s330, Type C AC Adapter Power Cord",
                 price: "$20.99",
                 image: "https://m.media-amazon.com/images/I/71hySCAG+7L._AC_SX466_.jpg",
-                desc: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9,T14 T15 E14 E15 L13,Yoga 7i 9i C740 C930 C940,Chromebook 100e 300e 500e c330 s330,Type C AC Adapter Power Cord",
+                desc: "SLE-TECH 65W USB C Laptop Charger Compatible with Lenovo ThinkPad X1 Carbon Gen 6 7 8 9, T14 T15 E14 E15 L13, Yoga 7i 9i C740 C930 C940, Chromebook 100e 300e 500e c330 s330, Type C AC Adapter Power Cord",
                 specs: [
                     "Output: 20V 3.25A / 15V 3A / 9V 2A / 5V 2A (65W Max)",
                     "Input: 100-240V 50-60Hz",
-                    "Connector: USB Type-C (Power Delivery)",
-                    "Compatibility: Lenovo ThinkPad, Yoga, Chromebook and more",
-                    "Safety: Built-in Protection against Over-temp/Current"
+                    "Connector: USB Type-C Power Delivery",
+                    "Safety: Intelligent PD Protocol with Smart Over-heat Protection",
+                    "Certification: UL/CE/FCC/RoHS Certified"
                 ]
             },
             {
                 id: 2,
-                asin: "B0BYHN7SM6",
-                name: "SLE-TECH 65W USB C Laptop Charger Fast Charging Block",
+                ref_id: "B0BYHN7SM6",
+                name: "SLE-TECH 65W USB C Universal Charger PD 3.0",
                 price: "$24.99",
                 image: "https://m.media-amazon.com/images/I/61Dp-PPCj-L._AC_SX355_.jpg",
-                desc: "High-speed USB-C PD 3.0 charger. Compatible with modern laptops, tablets, and phones. Compact travel-friendly design.",
+                desc: "Universal Type-C power solution for ultra-thin laptops and high-performance mobile devices.",
                 specs: [
-                    "Input: 100-240V Multi-Voltage",
-                    "Output: 5V/9V/12V/15V/20V (Up to 65W)",
-                    "Connector: Type-C Power Delivery",
-                    "Compatibility: MacBook, ThinkPad, Dell, HP, ASUS"
+                    "Input: 100-240V Multi-Voltage Support",
+                    "Output: Full PD 3.0 Profile (Up to 65W)",
+                    "Connector: Type-C",
+                    "Best For: MacBook, XPS, ZenBook, ThinkPad"
                 ]
             },
             {
                 id: 3,
-                asin: "B0BFDF7B4R",
-                name: "SLE-TECH 65W 45W Adapter for HP Pavilion Envy Spectre EliteBook",
+                ref_id: "B0BFDF7B4R",
+                name: "SLE-TECH 65W Smart Adapter for HP Pavilion & EliteBook",
                 price: "$18.99",
                 image: "https://m.media-amazon.com/images/I/51yzbDC7WWL._AC_SX355_.jpg",
-                desc: "Precision replacement for HP smart blue tip chargers. Certified original performance with enhanced durability.",
+                desc: "High-precision replacement adapter with HP smart blue tip connector for reliable power delivery.",
                 specs: [
-                    "Input: 100-240V 50-60Hz",
                     "Output: 19.5V 3.33A / 2.31A",
-                    "Connector: 4.5mm * 3.0mm (HP Blue Tip)",
-                    "Certifications: UL, FCC, CE, RoHS"
+                    "Connector: 4.5mm * 3.0mm Blue Tip",
+                    "Protocol: Smart Pin Technology",
+                    "Certification: Energy Star Level VI"
                 ]
             },
             {
                 id: 4,
-                asin: "B01LZY09EF",
-                name: "SLE-TECH 6ft Universal 3 Prong AC Power Cord Replacement",
+                ref_id: "B01LZY09EF",
+                name: "SLE-TECH 6ft Heavy Duty AC Power Cord",
                 price: "$9.99",
                 image: "https://m.media-amazon.com/images/I/71C+tjgaxcL._AC_SY355_.jpg",
-                desc: "Heavy-duty 18 AWG universal power cord. Designed for high-wattage desktop PCs, monitors, and various electronics.",
+                desc: "Premium 18AWG pure copper core power cable for high-power electronics.",
                 specs: [
-                    "Connector: NEMA 5-15P to IEC C13",
-                    "Core: 100% Pure Copper 18AWG",
-                    "Length: 6 Feet / 1.8 Meters",
-                    "Load Capacity: 10A / 1250W"
+                    "Gauge: 18AWG Pure Copper",
+                    "Connectors: NEMA 5-15P to IEC C13",
+                    "Length: 6 Feet",
+                    "Max Load: 10A / 125W"
                 ]
             },
             {
                 id: 5,
-                asin: "B09MTJJLW5",
-                name: "SLE-TECH 65W 45W Laptop Charger for Lenovo IdeaPad Yoga",
+                ref_id: "B09MTJJLW5",
+                name: "SLE-TECH 65W Adapter for Lenovo IdeaPad & Yoga",
                 price: "$21.99",
                 image: "https://m.media-amazon.com/images/I/61KlB2-Vr0L._AC_SX466_.jpg",
-                desc: "Tailored charger for Lenovo laptops with 4.0mm round tip. Stable voltage output ensuring battery health.",
+                desc: "Compact wall-mount adapter designed for Lenovo consumer laptops with small round tip.",
                 specs: [
-                    "Input: AC 100-240V",
-                    "Output: 20V 3.25A / 2.25A (65W Max)",
-                    "Connector: 4.0mm * 1.7mm (Round Tip)",
-                    "Compatibility: IdeaPad 3/5, Yoga 710/720/730"
+                    "Output: 20V 3.25A / 2.25A",
+                    "Connector: 4.0mm * 1.7mm Round Tip",
+                    "Efficiency: DoE Level VI Compliant",
+                    "Design: Ultra-Compact Portable Build"
                 ]
             }
         ];
@@ -304,11 +351,11 @@
                         <h3 class="text-sm font-bold text-gray-800 mb-2 line-clamp-2 leading-relaxed h-10">${p.name}</h3>
                         <p class="text-blue-600 font-extrabold text-lg mb-3">${p.price}</p>
                         <div class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-4">
-                            ASIN: ${p.asin}
+                            REF: ${p.ref_id}
                         </div>
                     </div>
                     <button class="w-full py-2.5 bg-gray-900 text-white rounded-xl hover:bg-blue-600 transition font-bold text-xs uppercase tracking-widest">
-                        Details & Buy
+                        View Product Details
                     </button>
                 </div>
             `).join('');
@@ -318,7 +365,6 @@
             const product = products.find(p => p.id === id);
             const detailContent = document.getElementById('detail-content');
             if (!product || !detailContent) return;
-            const amazonUrl = `https://www.amazon.com/dp/${product.asin}`;
             
             detailContent.innerHTML = `
                 <button onclick="navigateTo('products')" class="mb-8 text-gray-500 hover:text-blue-600 flex items-center gap-2 font-bold transition text-sm">
@@ -331,33 +377,33 @@
                     </div>
                     <div class="flex flex-col justify-center">
                         <div class="mb-4 text-center md:text-left">
-                            <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-black uppercase rounded tracking-widest">Official Store</span>
+                            <span class="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-black uppercase rounded tracking-widest">Premium Choice</span>
                         </div>
                         <h2 class="text-2xl md:text-3xl font-extrabold mb-4 text-gray-900 leading-tight text-center md:text-left">${product.name}</h2>
                         <div class="text-4xl font-black text-blue-600 mb-6 text-center md:text-left">${product.price}</div>
                         
                         <div class="space-y-6 mb-8">
                             <div>
-                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Specifications</h4>
+                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Technical Specs</h4>
                                 <ul class="grid grid-cols-1 gap-2">
                                     ${product.specs.map(s => `
                                         <li class="flex items-center text-gray-700 text-sm">
-                                            <i class="fas fa-check text-blue-500 mr-3 text-[10px]"></i> 
+                                            <i class="fas fa-microchip text-blue-500 mr-3 text-[10px]"></i> 
                                             <span>${s}</span>
                                         </li>`).join('')}
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Description</h4>
+                                <h4 class="font-black text-xs uppercase tracking-[0.2em] text-gray-400 mb-3 text-center md:text-left">Detailed Description</h4>
                                 <p class="text-gray-600 text-sm leading-relaxed text-center md:text-left">${product.desc}</p>
                             </div>
                         </div>
                         
                         <div class="space-y-3">
-                            <a href="${amazonUrl}" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#FF9900] hover:bg-[#E68A00] text-gray-900 py-4 rounded-xl font-black text-lg shadow-lg transition-all active:scale-[0.98]">
-                                <i class="fab fa-amazon text-xl"></i> BUY ON AMAZON
-                            </a>
-                            <p class="text-[10px] text-center text-gray-400 font-bold uppercase tracking-tighter">Secure checkout & global shipping provided by Amazon</p>
+                            <button onclick="navigateTo('support')" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-black text-lg shadow-lg transition-all active:scale-[0.98]">
+                                <i class="fas fa-paper-plane text-xl"></i> INQUIRE FOR QUOTE
+                            </button>
+                            <p class="text-[10px] text-center text-gray-400 font-bold uppercase tracking-tighter">We provide wholesale and enterprise supply chains worldwide</p>
                         </div>
                     </div>
                 </div>
@@ -382,7 +428,7 @@
                     (pageId === 'home' && text.includes('home')) ||
                     (pageId === 'products' && text.includes('product')) ||
                     (pageId === 'about' && text.includes('about')) ||
-                    (pageId === 'support' && text.includes('support'))
+                    (pageId === 'support' && (text.includes('support') || text.includes('contact')))
                 ) {
                     link.classList.add('active');
                 }
@@ -396,7 +442,7 @@
         };
 
         document.getElementById('mobile-menu-button').onclick = () => {
-            alert('SLE-TECH Mobile Menu: Use Desktop version for full brand experience.');
+            alert('SLE-TECH Mobile Navigation: For enterprise services, please contact our global support team.');
         };
     </script>
 </body>
